@@ -21,5 +21,12 @@ jobs:
       - name: Run Tests
         run: go test -coverprofile=c.out
 
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Check Formatting
         run: test -z $(go fmt ./...)
+      
+      
