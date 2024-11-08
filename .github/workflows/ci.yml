@@ -27,8 +27,7 @@ jobs:
 
     steps:
       - name: Install staticcheck and check linting with it
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-        run: staticcheck ./...
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest && staticcheck ./...
 
       - name: Check Formatting
         run: test -z $(go fmt ./...)
