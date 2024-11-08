@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: dominikh/staticcheck-action@v1
-        with:
-          version: "latest"
+      - name: Install staticcheck and check linting with it
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+        run: staticcheck ./...
 
       - name: Check Formatting
         run: test -z $(go fmt ./...)
